@@ -5,10 +5,10 @@ import java.util.Optional;
 
 public enum BikeBrand {
 
-    ALCHEMY("Alchemy"),
-    ARI("Ari"),
-    ATHERTON("Atherton"),
-    AVENTON("Aventon"),
+    ALCHEMY("Alchemy", "https://alchemybikes.com"),
+    ARI("Ari","https://aribikes.com"),
+    ATHERTON("Atherton","https://www.athertonbikes.com"),
+    AVENTON("Aventon","https://www.aventon.com"),
     BAKCOU("Bakcou"), //ebike only
     BANSHEE("Banshee "),
     BERGAMONT("Bergamont"), //mostly ebike
@@ -58,32 +58,30 @@ public enum BikeBrand {
     ON_ONE("On-One", "https://planetx.co.uk/collections/on-one-bikes"),            // Adjusted "ON-ONE" for valid syntax
     ORANGE("Orange", "https://www.orangebikes.com"),
     ORBEA("Orbea", "https://www.orbea.com"),
-    PIVOT(""),
-    POLYGON(""),
-    RALEIGH(""),
-    REVEL(""),
-    ROCKRIDER(""),
-    ROCKY_MOUNTAIN(""),    // Adjusted "ROCKY MOUNTAIN" for valid syntax
-    ROSE(""),
-    SALSA(""),
-    SANTA_CRUZ(""),        // Adjusted "SANTA CRUZ" for valid syntax
-    SCOTT(""),
-    SENSE(""),
-    SPECIALIZED(""),
-    SPOT(""),
-    SURFACES604(""),       // Kept as is, valid syntax
-    SURLY(""),
-    TITUS(""),
-    TRANSITION(""),
-    TREK(""),
-    TURNER(""),
-    UNIVEGA(""),
-    VITUS(""),
-    WEIZE(""),
-    WHYTE(""),
-    WILIER(""),
-    YETI(""),
-    YT_INDUSTRIES("");      // Adjusted "YT INDUSTRIES" for valid syntax
+    PIVOT("Pivot","https://www.pivotcycles.com/en"),
+    POLYGON("Polygon","https://www.polygonbikes.com"),
+    RALEIGH("Raleigh","https://www.raleigh.co.uk/gb/en"),
+    REVEL("Revel","https://revelbikes.com"),
+    ROCKY_MOUNTAIN("Rocky Mountain","https://bikes.com"),    // Adjusted "ROCKY MOUNTAIN" for valid syntax
+    ROSE("Rose","https://www.rosebikes.com"),
+    SALSA("Salsa","https://www.salsacycles.com"),
+    SANTA_CRUZ("Santa Cruz","https://www.santacruzbicycles.com"),        // Adjusted "SANTA CRUZ" for valid syntax
+    SCOTT("SCOTT","https://www.scott-sports.com"),
+    SPECIALIZED("Specialized","https://www.specialized.com"),
+    SPOT("Spot","https://spotbikes.com"),
+    SURFACES604("Surface 604","https://surface604bikes.com"),       // ebike only
+    SURLY("Surly","https://surlybikes.com"),
+    TITUS("Titus","https://planetx.co.uk/collections/titus-bikes"),
+    TRANSITION("Transition","https://www.transitionbikes.com"),
+    TREK("Trek","https://www.trekbikes.com/us/en_US"),
+    TURNER("Turner","https://turnerbikes.com"),
+    UNIVEGA("Univega","https://www.univega-usa.com"),
+    VITUS("Vitus","https://vitusbikes.com"),
+    //WEIZE(""), //amazon/ebay only bike
+    WHYTE("Whyte","https://whytebikes.com"),
+    WILIER("Welier","https://www.wilier.com"),
+    YETI("Yeti","https://yeticycles.com"),
+    YT_INDUSTRIES("YT" ,"https://www.yt-industries.com");      // Adjusted "YT INDUSTRIES" for valid syntax
 
     private final String name;
     private final String url;
