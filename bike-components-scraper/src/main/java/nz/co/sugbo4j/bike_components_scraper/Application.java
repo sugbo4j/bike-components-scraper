@@ -2,6 +2,7 @@ package nz.co.sugbo4j.bike_components_scraper;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -22,6 +23,12 @@ public class Application {
             throw new RuntimeException(e);
         }
         Elements items = doc.select("div.item");
+
+        for (Element item : items) {
+            // System.out.println(item.select("a.product-click").text());
+            System.out.println(item.attribute("data-name").getValue());
+            
+        }
 
     }
 
