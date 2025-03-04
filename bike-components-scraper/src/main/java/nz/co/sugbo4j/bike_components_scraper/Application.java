@@ -1,5 +1,8 @@
 package nz.co.sugbo4j.bike_components_scraper;
 
+import nz.co.sugbo4j.bike_components_scraper.model.BikeBrand;
+import nz.co.sugbo4j.bike_components_scraper.model.Frame;
+import nz.co.sugbo4j.bike_components_scraper.model.Material;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -27,8 +30,12 @@ public class Application {
         for (Element item : items) {
             // System.out.println(item.select("a.product-click").text());
             System.out.println(item.attribute("data-name").getValue());
-            
+
         }
+
+        Frame frame = new Frame(BikeBrand.ALCHEMY, Material.ALU, Frame.Suspension.HARDTAIL,
+                BikeBrand.ALCHEMY.getText(), Frame.CableRouting.INTERNAL);
+
 
     }
 

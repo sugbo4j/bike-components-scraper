@@ -362,16 +362,16 @@ public enum BikeBrand {
     ZEN("Zen", "https://www.zenbikes.com"),
     ZERODE("Zerode", "https://www.zerodebikes.com");
 
-    private final String name;
+    private final String text;
     private final String url;
 
-    BikeBrand(String name) {
-        this.name = name;
+    BikeBrand(String text) {
+        this.text = text;
         this.url = "";
     }
 
-    BikeBrand(String name, String official_url) {
-        this.name = name;
+    BikeBrand(String text, String official_url) {
+        this.text = text;
         this.url = official_url;
     }
 
@@ -381,8 +381,8 @@ public enum BikeBrand {
      *
      * @return common name
      */
-    public String getName() {
-        return name;
+    public String getText() {
+        return text;
     }
 
     /**
@@ -404,6 +404,6 @@ public enum BikeBrand {
         if (name == null || name.trim().isEmpty()) {
             return Optional.empty();
         }
-        return Arrays.stream(values()).filter(b -> b.name.equalsIgnoreCase(name.trim())).findFirst();
+        return Arrays.stream(values()).filter(b -> b.text.equalsIgnoreCase(name.trim())).findFirst();
     }
 }
