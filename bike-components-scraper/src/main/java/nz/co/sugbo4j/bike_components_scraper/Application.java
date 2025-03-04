@@ -1,6 +1,7 @@
 package nz.co.sugbo4j.bike_components_scraper;
 
-import nz.co.sugbo4j.bike_components_scraper.model.BikeBrand;
+import nz.co.sugbo4j.bike_components_scraper.model.manufacturer.BikeBrand;
+import nz.co.sugbo4j.bike_components_scraper.model.BottomBracket;
 import nz.co.sugbo4j.bike_components_scraper.model.Frame;
 import nz.co.sugbo4j.bike_components_scraper.model.Material;
 import org.jsoup.Jsoup;
@@ -33,8 +34,14 @@ public class Application {
 
         }
 
-        Frame frame = new Frame(BikeBrand.ALCHEMY, Material.ALU, Frame.Suspension.HARDTAIL,
-                BikeBrand.ALCHEMY.getText(), Frame.CableRouting.INTERNAL);
+        Frame frame = new Frame(
+                BikeBrand.ALCHEMY,
+                Material.ALU,
+                Frame.Suspension.HARDTAIL,
+                BikeBrand.ALCHEMY.getText(),
+                Frame.CableRouting.INTERNAL,
+                new BottomBracket(BottomBracket.Type.THREADED, "BSA", 73),
+                30.9);
 
 
     }

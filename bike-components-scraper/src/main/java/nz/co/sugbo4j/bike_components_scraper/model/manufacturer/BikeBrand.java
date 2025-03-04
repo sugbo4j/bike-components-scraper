@@ -1,4 +1,4 @@
-package nz.co.sugbo4j.bike_components_scraper.model;
+package nz.co.sugbo4j.bike_components_scraper.model.manufacturer;
 
 import java.util.Arrays;
 import java.util.Optional;
