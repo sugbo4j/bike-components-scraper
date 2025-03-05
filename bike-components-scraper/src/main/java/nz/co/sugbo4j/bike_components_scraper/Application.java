@@ -4,6 +4,7 @@ import nz.co.sugbo4j.bike_components_scraper.model.manufacturer.BikeBrand;
 import nz.co.sugbo4j.bike_components_scraper.model.BottomBracket;
 import nz.co.sugbo4j.bike_components_scraper.model.Frame;
 import nz.co.sugbo4j.bike_components_scraper.model.Material;
+import nz.co.sugbo4j.bike_components_scraper.model.manufacturer.PartsMaker;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -40,7 +41,7 @@ public class Application {
                 Frame.Suspension.HARDTAIL,
                 BikeBrand.ALCHEMY.getText(),
                 Frame.CableRouting.INTERNAL,
-                new BottomBracket(BottomBracket.Type.THREADED, "BSA", 73),
+                new BottomBracket(PartsMaker.SHIMANO, BottomBracket.Type.THREADED, "BSA", 73),
                 30.9);
 
 
