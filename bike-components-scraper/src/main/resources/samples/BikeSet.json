@@ -1,12 +1,22 @@
 {
-  "BikeBrand": "Canyon",
-  "Category": "Enduro",
-  "model": "Torue 5",
+  "brand": "Canyon",
+  "category": "Enduro",
+  "name": "Torue 5",
+  "family": "Torue",
   "year": 2025,
   "description:": "(deore)(fullsuspension)(27.5/29)",
   "sizes": [
     "S",
     "L",
     "XL"
-  ]
+  ],
+  "frame": {
+    "brand": "Canyon",
+    "material": "CARBON",
+    "suspension": "HARDTAIL",
+    "name": "SuperFly 9.7",
+    "cableRouting": "INTERNAL",
+    "bottomBracket": "BB92",
+    "seatPostDiameter": 31.6
+  }
 }

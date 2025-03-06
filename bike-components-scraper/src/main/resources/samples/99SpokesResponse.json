@@ -1,0 +1,450 @@
+{
+  "id": "string",
+  "url": "string",
+  "thumbnailUrl": "string",
+  "makerId": "string",
+  "maker": "string",
+  "year": 2000,
+  "isLatestFamilyYear": true,
+  "model": "string",
+  "family": "string",
+  "category": "mountain",
+  "subcategory": "crosscountry",
+  "buildKind": "complete",
+  "isFrameset": true,
+  "isEbike": true,
+  "gender": "unisex",
+  "prices": [
+    {
+      "currency": "USD",
+      "amount": 50000,
+      "discountedAmount": null,
+      "discount": null
+    }
+  ],
+  "shifting": {
+    "kind": "none"
+  },
+  "weight": {
+    "weightKG": 50,
+    "kind": "complete",
+    "description": "string"
+  },
+  "weightLimit": {
+    "weightKG": 600,
+    "description": "string"
+  },
+  "wheels": {
+    "configuration": "same",
+    "kinds": [
+      "700"
+    ]
+  },
+  "tireClearance": [
+    {
+      "wheelKind": "700",
+      "maxTireWidth": "string"
+    }
+  ],
+  "gearing": {
+    "kinds": [
+      "conventional"
+    ],
+    "front": {
+      "count": 1
+    },
+    "rear": {
+      "count": 1
+    }
+  },
+  "suspension": {
+    "configuration": "full",
+    "adjustmentKind": "manual",
+    "front": {
+      "isRigid": true,
+      "travelMM": 1
+    },
+    "rear": {
+      "isRigid": true,
+      "travelMM": 1
+    }
+  },
+  "components": {
+    "rearDerailleur": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    },
+    "frontDerailleur": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    },
+    "frame": {
+      "description": "string",
+      "material": "carbon",
+      "hangerStandard": "udh"
+    },
+    "fork": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string",
+      "material": "carbon"
+    },
+    "rearShock": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    },
+    "headset": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    },
+    "shifters": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    },
+    "crank": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    },
+    "powerMeter": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    },
+    "bottomBracket": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string",
+      "standard": "string",
+      "shellWidthMM": 0,
+      "threaded": true
+    },
+    "chain": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    },
+    "chainGuide": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    },
+    "chainTensioner": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    },
+    "cassette": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    },
+    "brakes": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string",
+      "kind": "hydraulicDisc"
+    },
+    "brakeLevers": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    },
+    "discRotors": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    },
+    "rims": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string",
+      "material": "carbon",
+      "innerWidthMM": 0
+    },
+    "spokes": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    },
+    "frontHub": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    },
+    "rearHub": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    },
+    "tires": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string",
+      "width": "string"
+    },
+    "stem": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    },
+    "handlebar": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string",
+      "kind": "flat"
+    },
+    "saddle": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    },
+    "seatpost": {
+      "description": "string",
+      "kind": "dropper",
+      "material": "carbon"
+    },
+    "pedals": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    },
+    "grips": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    },
+    "motor": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string",
+      "kind": "middrive"
+    },
+    "battery": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    },
+    "remote": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    },
+    "display": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    },
+    "charger": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    },
+    "lights": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    },
+    "fenders": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    },
+    "racks": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    },
+    "lock": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    },
+    "stand": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    },
+    "bell": {
+      "description": "string",
+      "display": "string",
+      "maker": "string",
+      "model": "string"
+    }
+  },
+  "sizes": [
+    {
+      "name": "string",
+      "wheelKinds": {
+        "front": "700",
+        "rear": "700"
+      },
+      "riderHeight": {
+        "minCM": 220,
+        "maxCM": 50,
+        "confidence": 1
+      },
+      "geometry": {
+        "isSuspicious": true,
+        "source": {
+          "stackMM": 0,
+          "reachMM": 0,
+          "stackReachRatio": 0,
+          "topTubeLengthMM": 0,
+          "seatTubeLengthMM": 0,
+          "seatTubeAngle": 0,
+          "headTubeLengthMM": 0,
+          "headTubeAngle": 0,
+          "chainstayLengthMM": 0,
+          "bottomBracketDropMM": 0,
+          "bottomBracketHeightMM": 0,
+          "frontCenterMM": 0,
+          "wheelbaseMM": 0,
+          "standoverHeightMM": 0,
+          "rakeMM": 0,
+          "trailMM": 0,
+          "frontTravelMM": 0,
+          "rearTravelMM": 0,
+          "stemLengthMM": 0,
+          "stemAngle": 0,
+          "crankLengthMM": 0,
+          "handlebarWidthMM": 0
+        },
+        "computed": {
+          "stackMM": 0,
+          "reachMM": 0,
+          "stackReachRatio": 0,
+          "topTubeLengthMM": 0,
+          "seatTubeLengthMM": 0,
+          "seatTubeAngle": 0,
+          "headTubeLengthMM": 0,
+          "headTubeAngle": 0,
+          "chainstayLengthMM": 0,
+          "bottomBracketDropMM": 0,
+          "bottomBracketHeightMM": 0,
+          "frontCenterMM": 0,
+          "wheelbaseMM": 0,
+          "standoverHeightMM": 0,
+          "rakeMM": 0,
+          "trailMM": 0,
+          "frontTravelMM": 0,
+          "rearTravelMM": 0,
+          "stemLengthMM": 0,
+          "stemAngle": 0,
+          "crankLengthMM": 0,
+          "handlebarWidthMM": 0
+        }
+      }
+    }
+  ],
+  "images": [
+    {
+      "url": "string",
+      "dimensions": {
+        "width": 0,
+        "height": 0
+      },
+      "colorKey": "string"
+    }
+  ],
+  "colors": [
+    {
+      "key": "string",
+      "name": "string"
+    }
+  ],
+  "analysis": {
+    "specLevel": {
+      "value": 0,
+      "groupKey": "string",
+      "explanation": {
+        "frame": 0,
+        "wheels": 0,
+        "brakes": 0,
+        "groupset": 0,
+        "shifting": 0,
+        "forkMaterial": 0,
+        "seatpost": 0,
+        "forkRank": 0,
+        "driveKind": 0,
+        "torqueNm": 0,
+        "batteryCapacity": 0
+      }
+    },
+    "valueProp": {
+      "value": 10
+    }
+  },
+  "reviews": [
+    {
+      "publishedDate": "string",
+      "source": "string",
+      "sourceLogoUrl": "string",
+      "url": "string",
+      "title": "string",
+      "description": "string",
+      "locale": "string",
+      "pros": [
+        "string"
+      ],
+      "cons": [
+        "string"
+      ]
+    }
+  ],
+  "productIds": [
+    {
+      "label": "string",
+      "variantLabel": "string",
+      "value": "string"
+    }
+  ],
+  "source": {
+    "imported": "2019-08-24T14:15:22Z",
+    "updated": "2019-08-24T14:15:22Z",
+    "modified": "2019-08-24T14:15:22Z",
+    "inactiveDays": 0,
+    "url": "string"
+  }
+}

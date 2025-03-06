@@ -1,4 +1,6 @@
 package nz.co.sugbo4j.bike_components_scraper.model;
 
-public record Crank() {
+import nz.co.sugbo4j.bike_components_scraper.model.manufacturer.PartsMaker;
+
+public record Crank(PartsMaker maker) {
 }
