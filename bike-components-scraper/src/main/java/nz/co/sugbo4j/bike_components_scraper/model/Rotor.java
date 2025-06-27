@@ -2,5 +2,5 @@ package nz.co.sugbo4j.bike_components_scraper.model;
 
 import nz.co.sugbo4j.bike_components_scraper.model.manufacturer.PartsMaker;
 
-public record Grips(PartsMaker maker, String model, String description) {
+public record Rotor(PartsMaker maker, String model, String description, int diameterMm, int numBolts) {
 }
