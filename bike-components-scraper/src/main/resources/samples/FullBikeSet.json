@@ -1,0 +1,167 @@
+{
+    "brand": "SANTA_CRUZ",
+    "sportCategory": "Mountain",
+    "model": "Nomad",
+    "description": "The ultimate trail bike for all conditions.",
+    "modelFamily": "Nomad",
+    "year": 2023,
+    "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+    ],
+    "frame": {
+        "brand": "SANTA_CRUZ",
+        "material": "CARBON",
+        "suspension": "FULLSUSPENSION",
+        "name": "Nomad Carbon C",
+        "cableRouting": "INTERNAL",
+        "bottomBracket": {
+            "maker": "SRAM",
+            "model": "DUB",
+            "description": "SRAM DUB BSA 73mm Threaded BB",
+            "type": "THREADED",
+            "standard": "BSA",
+            "width": 73
+        },
+        "seatPostDiameter": 31.6
+    },
+    "groupset": {
+        "maker": "SRAM",
+        "brakes": {
+            "maker": "SRAM",
+            "model": "Code R",
+            "description": "SRAM Code R hydraulic disc brakes",
+            "numPiston": 4
+        },
+        "crank": {
+            "maker": "SRAM",
+            "model": "Descendant Eagle DUB",
+            "description": "SRAM Descendant Eagle DUB, 170mm, 32t"
+        },
+        "shifters": {
+            "maker": "SRAM",
+            "model": "GX Eagle",
+            "description": "SRAM GX Eagle, 12-speed"
+        },
+        "frontDerailleur": null,
+        "rearDerailleur": {
+            "maker": "SRAM",
+            "model": "GX Eagle",
+            "description": "SRAM GX Eagle, 12-speed"
+        },
+        "cassette": {
+            "maker": "SRAM",
+            "model": "XG-1275 Eagle",
+            "description": "SRAM XG-1275 Eagle, 12-speed, 10-52t"
+        },
+        "bottomBracket": {
+            "maker": "SRAM",
+            "model": "DUB",
+            "description": "SRAM DUB BSA 73mm Threaded BB",
+            "type": "THREADED",
+            "standard": "BSA",
+            "width": 73
+        },
+        "chain": {
+            "maker": "SRAM",
+            "model": "GX Eagle",
+            "description": "SRAM GX Eagle, 12-speed"
+        },
+        "chainring": {
+            "maker": "SRAM",
+            "model": "32t",
+            "description": "SRAM 32t chainring"
+        }
+    },
+    "fork": {
+        "maker": "FOX",
+        "model": "38 Float Performance",
+        "description": "FOX 38 Float Performance, 170mm",
+        "travelMm": 170,
+        "offsetMm": 44
+    },
+    "rearShock": {
+        "maker": "ROCK_SHOX",
+        "model": "Super Deluxe Select+",
+        "description": "RockShox Super Deluxe Select+",
+        "travelMm": 170
+    },
+    "handlebar": {
+        "maker": "BURGTEC",
+        "model": "Ride Wide Alloy",
+        "description": "Burgtec Ride Wide Alloy Bar, 800mm"
+    },
+    "stem": {
+        "maker": "BURGTEC",
+        "model": "Enduro MK3",
+        "description": "Burgtec Enduro MK3, 42mm"
+    },
+    "grips": {
+        "maker": "SANTA_CRUZ",
+        "model": "House Grips",
+        "description": "Santa Cruz House Grips"
+    },
+    "saddle": {
+        "maker": "WTB",
+        "model": "Silverado Medium CroMo",
+        "description": "WTB Silverado Medium CroMo"
+    },
+    "seatPost": {
+        "maker": "ROCK_SHOX",
+        "model": "Reverb Stealth",
+        "description": "RockShox Reverb Stealth, 31.6",
+        "type": "DROPPER",
+        "length": 175,
+        "diameter": 31.6
+    },
+    "frontHub": {
+        "maker": "DT_SWISS",
+        "model": "370",
+        "description": "DT Swiss 370, 15x110, 28h"
+    },
+    "rearHub": {
+        "maker": "DT_SWISS",
+        "model": "370",
+        "description": "DT Swiss 370, 12x148, 28h"
+    },
+    "rims": {
+        "maker": "RACEFACE",
+        "model": "AR Offset 30",
+        "description": "RaceFace AR Offset 30 29\" Rims"
+    },
+    "tires": [
+        {
+            "maker": "MAXXIS",
+            "model": "Assegai 29\"x2.5\"",
+            "description": "Maxxis Assegai 29\"x2.5\", 3C, MaxxGrip, EXO+, TR"
+        },
+        {
+            "maker": "MAXXIS",
+            "model": "Minion DHR II 29\"x2.4\"",
+            "description": "Maxxis Minion DHR II 29\"x2.4\", 3C, MaxxTerra, EXO+, TR"
+        }
+    ],
+    "rotors": [
+        {
+            "maker": "SRAM",
+            "model": "Centerline",
+            "description": "SRAM Centerline 200mm",
+            "diameterMm": 200,
+            "numBolts": 6
+        },
+        {
+            "maker": "SRAM",
+            "model": "Centerline",
+            "description": "SRAM Centerline 200mm",
+            "diameterMm": 200,
+            "numBolts": 6
+        }
+    ],
+    "pedals": {
+      "maker": "BURGTEC",
+      "model": "Penthouse Flat MK5",
+      "description": "Burgtec Penthouse Flat MK5 Pedals"
+    }
+}
