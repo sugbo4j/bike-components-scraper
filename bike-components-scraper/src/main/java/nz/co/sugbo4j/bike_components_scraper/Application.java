@@ -41,9 +41,8 @@ public class Application {
                 Frame.Suspension.HARDTAIL,
                 BikeBrand.ALCHEMY.getText(),
                 Frame.CableRouting.INTERNAL,
-                new BottomBracket(PartsMaker.SHIMANO, BottomBracket.Type.THREADED, "BSA", 73),
+                new BottomBracket(PartsMaker.SHIMANO, "model", "description", BottomBracket.Type.THREADED, "BSA", 73),
                 30.9);
-
 
     }
 
