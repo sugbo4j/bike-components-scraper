@@ -1,4 +1,4 @@
-package nz.co.sugbo4j.bike_components_scraper.model;
+package nz.co.sugbo4j.bike_components_scraper.model.common;
 
 public enum Material {
     CARBON("Carbon"), ALU("Aluminum"), STEEL("Steel"), TITANIUM("Titanium");

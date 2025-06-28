@@ -1,5 +1,6 @@
 package nz.co.sugbo4j.bike_components_scraper.model;
 
+import nz.co.sugbo4j.bike_components_scraper.model.common.Material;
 import nz.co.sugbo4j.bike_components_scraper.model.manufacturer.BikeBrand;
 
 public record Frame(
