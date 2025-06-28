@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: bike-components-scraper
+  datasource:
+    url: jdbc:h2:mem:batchdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/bike-scraper-db
+  batch:
+    jdbc:
+      initialize-schema: always # or 'embedded' for H2, 'never' if you manage schema manually
+    job:
+      enabled: false # Jobs will be triggered programmatically
+  main:
+    allow-bean-definition-overriding: true # Allow overriding beans for custom configurations
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,scrapingmetrics
+  endpoint:
+    health:
+      show-details: always
+    scrapingmetrics:
+      enabled: true
+      id: scrapingmetrics

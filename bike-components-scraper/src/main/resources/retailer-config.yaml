@@ -1,0 +1,21 @@
+retailers:
+  - id: retailerOne
+    name: Retailer One
+    baseUrl: https://www.retailerone.com
+    scraperClass: nz.co.sugbo4j.bike_components_scraper.scraper.RetailerOneScraper
+    enabled: true
+    schedule: "0 0 1 * * ?" # Every day at 1 AM
+    products:
+      - category: bikes
+        url: /bikes
+      - category: parts
+        url: /parts
+  - id: retailerTwo
+    name: Retailer Two
+    baseUrl: https://www.retailertwo.com
+    scraperClass: nz.co.sugbo4j.bike_components_scraper.scraper.RetailerTwoScraper
+    enabled: false
+    schedule: "0 30 2 * * ?" # Every day at 2:30 AM
+    products:
+      - category: accessories
+        url: /accessories

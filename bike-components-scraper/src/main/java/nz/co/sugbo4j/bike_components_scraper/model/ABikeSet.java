@@ -12,5 +12,15 @@ public record ABikeSet(BikeBrand brand,
         Frame frame,
         GroupSet groupset,
         Fork fork,
-        RearShock rearShock) {
+        RearShock rearShock,
+        Handlebar handlebar,
+        Stem stem,
+        Grips grips,
+        Saddle saddle,
+        SeatPost seatPost,
+        Hub[] hubs,
+        Rims rims,
+        Tires[] tires,
+        Rotor[] rotors,
+        Pedals pedals) {
 }

@@ -29,12 +29,22 @@
     },
     "groupset": {
         "maker": "SRAM",
-        "brakes": {
-            "maker": "SRAM",
-            "model": "Code R",
-            "description": "SRAM Code R hydraulic disc brakes",
-            "numPiston": 4
-        },
+        "brakes": [
+            {
+                "maker": "SRAM",
+                "model": "Code R",
+                "description": "SRAM Code R hydraulic disc brakes",
+                "numPiston": 4,
+                "side": "FRONT"
+            },
+            {
+                "maker": "SRAM",
+                "model": "Code R",
+                "description": "SRAM Code R hydraulic disc brakes",
+                "numPiston": 4,
+                "side": "REAR"
+            }
+        ],
         "crank": {
             "maker": "SRAM",
             "model": "Descendant Eagle DUB",
@@ -45,12 +55,14 @@
             "model": "GX Eagle",
             "description": "SRAM GX Eagle, 12-speed"
         },
-        "frontDerailleur": null,
-        "rearDerailleur": {
-            "maker": "SRAM",
-            "model": "GX Eagle",
-            "description": "SRAM GX Eagle, 12-speed"
-        },
+        "derailleurs": [
+            {
+                "maker": "SRAM",
+                "model": "GX Eagle",
+                "description": "SRAM GX Eagle, 12-speed",
+                "side": "REAR"
+            }
+        ],
         "cassette": {
             "maker": "SRAM",
             "model": "XG-1275 Eagle",
@@ -116,31 +128,37 @@
         "length": 175,
         "diameter": 31.6
     },
-    "frontHub": {
-        "maker": "DT_SWISS",
-        "model": "370",
-        "description": "DT Swiss 370, 15x110, 28h"
-    },
-    "rearHub": {
-        "maker": "DT_SWISS",
-        "model": "370",
-        "description": "DT Swiss 370, 12x148, 28h"
-    },
+    "hubs": [
+        {
+            "maker": "DT_SWISS",
+            "model": "370",
+            "description": "DT Swiss 370, 15x110, 28h",
+            "side": "FRONT"
+        },
+        {
+            "maker": "DT_SWISS",
+            "model": "370",
+            "description": "DT Swiss 370, 12x148, 28h",
+            "side": "REAR"
+        }
+    ],
     "rims": {
         "maker": "RACEFACE",
         "model": "AR Offset 30",
         "description": "RaceFace AR Offset 30 29\" Rims"
     },
-    "tires": [
+        "tires": [
         {
             "maker": "MAXXIS",
             "model": "Assegai 29\"x2.5\"",
-            "description": "Maxxis Assegai 29\"x2.5\", 3C, MaxxGrip, EXO+, TR"
+            "description": "Maxxis Assegai 29\"x2.5\", 3C, MaxxGrip, EXO+, TR",
+            "side": "FRONT"
         },
         {
             "maker": "MAXXIS",
             "model": "Minion DHR II 29\"x2.4\"",
-            "description": "Maxxis Minion DHR II 29\"x2.4\", 3C, MaxxTerra, EXO+, TR"
+            "description": "Maxxis Minion DHR II 29\"x2.4\", 3C, MaxxTerra, EXO+, TR",
+            "side": "REAR"
         }
     ],
     "rotors": [
@@ -149,14 +167,16 @@
             "model": "Centerline",
             "description": "SRAM Centerline 200mm",
             "diameterMm": 200,
-            "numBolts": 6
+            "numBolts": 6,
+            "side": "FRONT"
         },
         {
             "maker": "SRAM",
             "model": "Centerline",
             "description": "SRAM Centerline 200mm",
             "diameterMm": 200,
-            "numBolts": 6
+            "numBolts": 6,
+            "side": "REAR"
         }
     ],
     "pedals": {
