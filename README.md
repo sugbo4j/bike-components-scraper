@@ -2,11 +2,11 @@
 
 A web scraping tool that extracts bike component specifications from popular online bike stores and saves the data to MongoDB for use in the BikeSpec Pro mobile application.
 
-## 🔍 About
+## About
 
-Bike components Scraper automates the collection of detailed bike component specifications from various online retailers. It's designed to build and maintain a comprehensive database of current mountain bike and road bike components, including detailed specifications, compatibility information, and pricing data.
+Bike components Scraper automates the collection of detailed bike component specifications from various online retailers. It's designed to build and maintain a comprehensive records of current mountain bike and road bike components, including detailed specifications, compatibility information, and pricing data.
 
-## 🚲 Features
+## Features
 
 ### Data Collection
 
@@ -24,10 +24,10 @@ Bike components Scraper automates the collection of detailed bike component spec
 
 ### Storage & Integration
 
-- Stores all data in a database
+- Stores all data in a MongodDb
 - Creates relationships between compatible components
 - Maintains historical pricing data
-- Prepares data for consumption by the BikeSpec Pro mobile app
+- Prepares data for consumption by the BikeSpec-app through the BikeSpec-api
 
 ### Scheduling & Monitoring
 
@@ -37,23 +37,23 @@ Bike components Scraper automates the collection of detailed bike component spec
 - Logging system for debugging and performance monitoring
 - Email notifications for scraping failures or detected website changes
 
-## 🛠️ Technical Implementation
+## Technical Implementation
 
 ### Architecture
 
-- Java-based command line application
+- Spring boot base application
 - JSoup library for HTML parsing
-- Database for data storage
+- MongodDb for data storage
 - Configurable scraping profiles for different retailers
 
 ### Key Components
 
 - Retailer-specific scraper implementations
 - Data normalization pipeline
-- Database connection and schema management
+- MongodDb connection and schema management
 - Scheduler and job management system
 
-## 📊 Supported Retailers
+## Supported Retailers
 
 - Example Bikes
 - Component World
@@ -61,22 +61,20 @@ Bike components Scraper automates the collection of detailed bike component spec
 - MountainGearCo
 - (More retailers to be added)
 
-## 🗓️ Project Status
-
-This project works alongside the BikeSpec Pro mobile application. Current status:
+## Project Status
 
 1. Core scraping engine - In Progress
 2. Data normalization pipeline - Planned
-3. Database integration - Planned
+3. MongodDb integration - Planned
 4. Scheduling system - Planned
 5. Retailer-specific scrapers - Ongoing Addition
 
-## ⚙️ Requirements
+## Requirements
 
 - Java 21 or higher
 - Maven 3 or higher
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Installation
 
@@ -96,15 +94,15 @@ java -jar target/bike-components-scraper-1.0.0.jar
 
 This tool is designed for personal and educational use only. Always ensure your scraping activities comply with each website's terms of service and robots.txt directives. Set appropriate delays between requests to minimize server impact.
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome, especially for adding support for new retailers or improving data extraction. Please submit a PR with a clear description of your changes.
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## 🔗 Related Projects
 
 - [BikeSpec Pro](https://github.com/sugbo4j/bikeSpec-app) - Mobile application that uses the data collected by this scraper
-- [BikeSpec API](https://github.com/sugbo4j/bikeSpec-api) - A RESTful API service that provides access to the comprehensive bike component database and compatibility engine
+- [BikeSpec API](https://github.com/sugbo4j/bikeSpec-api) - A GraphQL API service that provides access to the comprehensive bike component MongodDb and compatibility engine
