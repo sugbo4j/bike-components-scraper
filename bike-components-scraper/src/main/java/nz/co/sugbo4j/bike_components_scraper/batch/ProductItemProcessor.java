@@ -1,28 +1,28 @@
 package nz.co.sugbo4j.bike_components_scraper.batch;
 
-import nz.co.sugbo4j.bike_components_scraper.config.RetailerConfiguration;
 import nz.co.sugbo4j.bike_components_scraper.model.AFullBikeSet;
-import nz.co.sugbo4j.bike_components_scraper.model.manufacturer.BikeBrand; // Add this import
+import nz.co.sugbo4j.bike_components_scraper.model.manufacturer.BikeBrand;
+import nz.co.sugbo4j.bike_components_scraper.model.scrapeData.Retailer;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.stereotype.Component;
 
-import java.util.UUID; // Add this import
+import java.util.UUID;
 
 @Component
 public class ProductItemProcessor
-        implements ItemProcessor<RetailerConfiguration.RetailerProperties.Product, AFullBikeSet> {
+        implements ItemProcessor<Retailer.Product, AFullBikeSet> {
 
     @Override
-    public AFullBikeSet process(RetailerConfiguration.RetailerProperties.Product item) throws Exception {
+    public AFullBikeSet process(Retailer.Product item) throws Exception {
         // TODO: Implement actual processing logic to transform raw scraped data into
         // AFullBikeSet
         // For now, create a dummy AFullBikeSet
-        System.out.println("Processing product: " + item.getCategory() + " - " + item.getUrl());
+        System.out.println("Processing product: " + item.category() + " - " + item.url());
 
         // Generate a random UUID for the ID
         String id = UUID.randomUUID().toString();
         String retailerId = "dummyRetailerId"; // This should come from the actual scraped data
-        String productUrl = "http://dummy.url/" + item.getUrl(); // This should come from the actual scraped data
+        String productUrl = "http://dummy.url/" + item.url(); // This should come from the actual scraped data
 
         return new AFullBikeSet(
                 id,

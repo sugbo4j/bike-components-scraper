@@ -1,6 +1,6 @@
 package nz.co.sugbo4j.bike_components_scraper.batch;
 
-import nz.co.sugbo4j.bike_components_scraper.config.RetailerConfiguration;
+import nz.co.sugbo4j.bike_components_scraper.model.scrapeData.Retailer;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobParameters;
 import org.springframework.batch.core.JobParametersBuilder;
@@ -18,6 +18,7 @@ import org.springframework.scheduling.support.CronTrigger;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Configuration
@@ -26,30 +27,30 @@ public class ScrapingJobScheduler implements SchedulingConfigurer {
 
     private final JobLauncher jobLauncher;
     private final ApplicationContext applicationContext;
-    private final RetailerConfiguration.RetailerProperties retailerProperties;
+    private final List<Retailer> retailers;
     private final Job scrapingJob; // Assuming a single job for all retailers for now
 
     @Autowired
     public ScrapingJobScheduler(JobLauncher jobLauncher,
             ApplicationContext applicationContext,
-            RetailerConfiguration.RetailerProperties retailerProperties,
+            List<Retailer> retailers,
             Job scrapingJob) {
         this.jobLauncher = jobLauncher;
         this.applicationContext = applicationContext;
-        this.retailerProperties = retailerProperties;
+        this.retailers = retailers;
         this.scrapingJob = scrapingJob;
     }
 
     @Override
     public void configureTasks(ScheduledTaskRegistrar taskRegistrar) {
-        retailerProperties.getRetailers().stream()
-                .filter(RetailerConfiguration.RetailerProperties.Retailer::isEnabled)
+        retailers.stream()
+                .filter(Retailer::enabled)
                 .forEach(retailer -> {
                     taskRegistrar.addTriggerTask(
-                            () -> launchJob(retailer.getId()),
-                            new CronTrigger(retailer.getSchedule()));
-                    System.out.println("Scheduled job for retailer: " + retailer.getName() + " with schedule: "
-                            + retailer.getSchedule());
+                            () -> launchJob(retailer.retailerId()),
+                            new CronTrigger(retailer.schedule()));
+                    System.out.println("Scheduled job for retailer: " + retailer.retailerName() + " with schedule: "
+                            + retailer.schedule());
                 });
     }
 

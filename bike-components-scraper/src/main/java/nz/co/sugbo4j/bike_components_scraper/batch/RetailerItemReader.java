@@ -1,6 +1,6 @@
 package nz.co.sugbo4j.bike_components_scraper.batch;
 
-import nz.co.sugbo4j.bike_components_scraper.config.RetailerConfiguration;
+import nz.co.sugbo4j.bike_components_scraper.model.scrapeData.Retailer;
 import nz.co.sugbo4j.bike_components_scraper.scraper.BaseScraper;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -10,53 +10,51 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 @Component
-public class RetailerItemReader implements ItemReader<RetailerConfiguration.RetailerProperties.Product> {
+public class RetailerItemReader implements ItemReader<Retailer.Product> {
 
     private final ApplicationContext applicationContext;
-    private final RetailerConfiguration.RetailerProperties retailerProperties;
-    private Queue<RetailerConfiguration.RetailerProperties.Product> productQueue;
+    private final List<Retailer> retailers;
+    private Queue<Retailer.Product> productQueue;
     private BaseScraper currentScraper;
     private String currentBaseUrl;
 
     @Autowired
-    public RetailerItemReader(ApplicationContext applicationContext,
-            RetailerConfiguration.RetailerProperties retailerProperties) {
+    public RetailerItemReader(ApplicationContext applicationContext, List<Retailer> retailers) {
         this.applicationContext = applicationContext;
-        this.retailerProperties = retailerProperties;
+        this.retailers = retailers;
         initializeProductQueue();
     }
 
     private void initializeProductQueue() {
         productQueue = new ConcurrentLinkedQueue<>();
-        retailerProperties.getRetailers().stream()
-                .filter(RetailerConfiguration.RetailerProperties.Retailer::isEnabled)
+        retailers.stream()
+                .filter(Retailer::enabled)
                 .forEach(retailer -> {
                     try {
-                        Class<?> scraperClass = Class.forName(retailer.getScraperClass());
+                        Class<?> scraperClass = Class.forName(retailer.scraperClass());
                         currentScraper = (BaseScraper) applicationContext.getBean(scraperClass);
-                        currentBaseUrl = retailer.getBaseUrl();
-                        retailer.getProducts().forEach(product -> productQueue.add(product));
+                        currentBaseUrl = retailer.retailerUrl();
+                        retailer.products().forEach(productQueue::add);
                     } catch (ClassNotFoundException e) {
-                        System.err.println("Scraper class not found: " + retailer.getScraperClass());
+                        System.err.println("Scraper class not found: " + retailer.scraperClass());
                     }
                 });
     }
 
     @Override
-    public RetailerConfiguration.RetailerProperties.Product read() throws Exception {
+    public Retailer.Product read() throws Exception {
         if (productQueue.isEmpty()) {
             return null; // No more products to scrape
         }
 
-        RetailerConfiguration.RetailerProperties.Product product = productQueue.poll();
+        Retailer.Product product = productQueue.poll();
         if (product != null) {
-            String fullUrl = currentBaseUrl + product.getUrl();
+            String fullUrl = currentBaseUrl + product.url();
             try {
                 Document document = Jsoup.connect(fullUrl).get();
                 // Here, we would typically pass the document to the currentScraper
