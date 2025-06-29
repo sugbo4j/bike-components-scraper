@@ -10,10 +10,8 @@ import org.yaml.snakeyaml.Yaml;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.time.Instant;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 @Configuration
 public class RetailerConfiguration {
@@ -27,7 +25,7 @@ public class RetailerConfiguration {
             List<Map<String, Object>> retailersData = (List<Map<String, Object>>) data.get("retailers");
             return retailersData.stream()
                     .map(this::mapToRetailer)
-                    .collect(Collectors.toList());
+                    .toList();
         }
     }
 
@@ -43,7 +41,7 @@ public class RetailerConfiguration {
         if (productsData != null) {
             products = productsData.stream()
                     .map(p -> new Product(p.get("category"), p.get("url")))
-                    .collect(Collectors.toList());
+                    .toList();
         }
         // Assuming scrapedAt and lastUpdated are not directly in retailer-config.yaml
         // and will be set elsewhere or are optional.

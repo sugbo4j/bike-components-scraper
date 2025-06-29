@@ -118,7 +118,6 @@ bike-components-scraper/
 - **Spring Batch**: Utilized for robust and scalable batch processing of scraping jobs, handling reading, processing, and writing data in chunks.
 - **Repository Pattern**: Implemented via Spring Data MongoDB, abstracting data access logic and promoting a clean separation of concerns.
 - **Strategy Pattern**: Evident in the `scraper` package, where `BaseScraper` defines a common interface for scraping, and concrete `RetailerXScraper` classes provide specific implementations for different retailers.
-- **Dependency Injection**: Heavily used throughout the Spring Boot application for managing component dependencies and promoting loose coupling.
 
 ## 6. Dependencies
 
@@ -132,20 +131,11 @@ The project relies on the following key technologies and libraries:
 - **JSoup**: Java library for working with real-world HTML.
 - **MongoDB**: NoSQL database for storing scraped product data.
 
-## 7. Conventions
-
-- **Code Style**: Adheres to standard Java coding conventions and Spring Boot best practices.
-- **Modern Java Features**: The project prioritizes the use of modern Java features (JDK 21+), especially **Java Records** for data transfer objects (DTOs) and configuration models to enhance immutability and readability.
-- **Configuration**: Uses YAML files (`application.yml`, `retailer-config.yaml`) for externalized configuration.
-- **Logging**: Utilizes Spring Boot's default logging mechanism (SLF4J with Logback) for effective debugging and monitoring.
-- **Error Handling**: Implements robust error handling within scraping and batch processes to ensure resilience and recovery.
-- **Naming Conventions**: Follows standard Java naming conventions for classes, methods, and variables.
-
-## 8. Entry Points
+## 7. Entry Points
 
 The primary entry point for the application is the `main` method within `nz.co.sugbo4j.bike_components_scraper.Application.java`. When the Spring Boot application starts, it initializes the Spring context, configures the batch jobs, and schedules the scraping process via `ScrapingJobScheduler`.
 
-## 9. Critical Workflows
+## 8. Critical Workflows
 
 1.  **Application Startup**: Spring Boot initializes, loads configurations (including the `List<Retailer>` from `retailer-config.yaml`), and sets up the MongoDB connection.
 2.  **Job Scheduling**: The `ScrapingJobScheduler` iterates through the enabled retailers and schedules a scraping job for each one based on its cron schedule.
@@ -155,7 +145,7 @@ The primary entry point for the application is the `main` method within `nz.co.s
 6.  **Data Storage**: The `ProductItemWriter` persists the normalized `AFullBikeSet` objects into the MongoDB database.
 7.  **Monitoring and Logging**: Throughout the process, logs are generated for debugging, performance monitoring, and error tracking.
 
-## 10. Scalability and Maintainability
+## 9. Scalability and Maintainability
 
 - **Modularity**: The clear separation of concerns (e.g., scraping logic, data models, batch processing) makes the codebase easier to understand, maintain, and extend.
 - **Configurable Retailers**: New retailers can be added by simply updating `retailer-config.yaml` and implementing a new `BaseScraper` extension, minimizing code changes.
@@ -163,7 +153,7 @@ The primary entry point for the application is the `main` method within `nz.co.s
 - **MongoDB**: A scalable NoSQL database well-suited for handling large volumes of semi-structured data.
 - **Automated Scheduling**: Ensures consistent and hands-off operation.
 
-## 11. Domain-Specific Decisions
+## 10. Domain-Specific Decisions
 
 - **Detailed Product Models**: The `model` package contains a rich hierarchy of bike component classes (e.g., `Fork`, `Crank`, `WheelSize`), reflecting the specific attributes and variations relevant to bike components. This detailed modeling supports comprehensive data capture and future compatibility analysis.
 - **Retailer-Specific Scraping**: Acknowledges that each online retailer may have a unique website structure, necessitating specific scraper implementations for accurate data extraction.
