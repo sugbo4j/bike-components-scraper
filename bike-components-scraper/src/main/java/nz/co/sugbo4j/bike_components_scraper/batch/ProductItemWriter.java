@@ -1,7 +1,7 @@
 package nz.co.sugbo4j.bike_components_scraper.batch;
 
-import nz.co.sugbo4j.bike_components_scraper.model.ScrapedProduct;
-import nz.co.sugbo4j.bike_components_scraper.repository.ScrapedProductRepository;
+import nz.co.sugbo4j.bike_components_scraper.model.AFullBikeSet;
+import nz.co.sugbo4j.bike_components_scraper.repository.AFullBikeSetRepository;
 import org.springframework.batch.item.Chunk;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,45 +10,57 @@ import org.springframework.stereotype.Component;
 import java.util.Optional;
 
 @Component
-public class ProductItemWriter implements ItemWriter<ScrapedProduct> {
+public class ProductItemWriter implements ItemWriter<AFullBikeSet> {
 
-    private final ScrapedProductRepository scrapedProductRepository;
+    private final AFullBikeSetRepository aFullBikeSetRepository;
 
     @Autowired
-    public ProductItemWriter(ScrapedProductRepository scrapedProductRepository) {
-        this.scrapedProductRepository = scrapedProductRepository;
+    public ProductItemWriter(AFullBikeSetRepository aFullBikeSetRepository) {
+        this.aFullBikeSetRepository = aFullBikeSetRepository;
     }
 
     @Override
-    public void write(Chunk<? extends ScrapedProduct> chunk) throws Exception {
-        for (ScrapedProduct product : chunk.getItems()) {
-            Optional<ScrapedProduct> existingProduct = scrapedProductRepository.findByRetailerIdAndProductUrl(
-                    product.retailerId(), product.productUrl());
+    public void write(Chunk<? extends AFullBikeSet> chunk) throws Exception {
+        for (AFullBikeSet bikeSet : chunk.getItems()) {
+            Optional<AFullBikeSet> existingBikeSet = aFullBikeSetRepository.findByRetailerIdAndProductUrl(
+                    bikeSet.retailerId(), bikeSet.productUrl());
 
-            if (existingProduct.isPresent()) {
+            if (existingBikeSet.isPresent()) {
                 // Update existing document
-                ScrapedProduct updatedProduct = existingProduct.get();
-                // Copy relevant fields from new product to existing one
-                updatedProduct = new ScrapedProduct(
-                        updatedProduct.id(), // Keep existing ID
-                        product.retailerId(),
-                        product.retailerName(),
-                        product.productUrl(),
-                        product.productName(),
-                        product.brand(),
-                        product.category(),
-                        product.price(),
-                        product.currency(),
-                        product.imageUrl(),
-                        product.description(),
-                        product.scrapedDate(),
-                        product.available());
-                scrapedProductRepository.save(updatedProduct);
-                System.out.println("Updated product: " + updatedProduct.productName());
+                AFullBikeSet updatedBikeSet = existingBikeSet.get();
+                // For a record, we need to create a new instance with updated fields.
+                // Assuming we want to update all fields from the new bikeSet except the ID.
+                updatedBikeSet = new AFullBikeSet(
+                        updatedBikeSet.id(), // Keep existing ID
+                        bikeSet.retailerId(),
+                        bikeSet.productUrl(),
+                        bikeSet.brand(),
+                        bikeSet.sportCategory(),
+                        bikeSet.model(),
+                        bikeSet.description(),
+                        bikeSet.modelFamily(),
+                        bikeSet.year(),
+                        bikeSet.sizes(),
+                        bikeSet.frame(),
+                        bikeSet.groupset(),
+                        bikeSet.fork(),
+                        bikeSet.rearShock(),
+                        bikeSet.handlebar(),
+                        bikeSet.stem(),
+                        bikeSet.grips(),
+                        bikeSet.saddle(),
+                        bikeSet.seatPost(),
+                        bikeSet.hubs(),
+                        bikeSet.rims(),
+                        bikeSet.tires(),
+                        bikeSet.rotors(),
+                        bikeSet.pedals());
+                aFullBikeSetRepository.save(updatedBikeSet);
+                System.out.println("Updated AFullBikeSet: " + updatedBikeSet.model());
             } else {
                 // Save new document
-                scrapedProductRepository.save(product);
-                System.out.println("Saved new product: " + product.productName());
+                aFullBikeSetRepository.save(bikeSet);
+                System.out.println("Saved new AFullBikeSet: " + bikeSet.model());
             }
         }
     }

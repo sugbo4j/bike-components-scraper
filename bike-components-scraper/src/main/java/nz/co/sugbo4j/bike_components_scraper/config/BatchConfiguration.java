@@ -3,7 +3,7 @@ package nz.co.sugbo4j.bike_components_scraper.config;
 import nz.co.sugbo4j.bike_components_scraper.batch.ProductItemProcessor;
 import nz.co.sugbo4j.bike_components_scraper.batch.ProductItemWriter;
 import nz.co.sugbo4j.bike_components_scraper.batch.RetailerItemReader;
-import nz.co.sugbo4j.bike_components_scraper.model.ScrapedProduct;
+import nz.co.sugbo4j.bike_components_scraper.model.AFullBikeSet;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
@@ -46,7 +46,7 @@ public class BatchConfiguration {
     @Bean
     public Step scrapingStep() {
         return new StepBuilder("scrapingStep",
-                jobRepository).<RetailerConfiguration.RetailerProperties.Product, ScrapedProduct>chunk(10,
+                jobRepository).<RetailerConfiguration.RetailerProperties.Product, AFullBikeSet>chunk(10,
                         transactionManager)
                 .reader(retailerItemReader)
                 .processor(productItemProcessor)
