@@ -32,13 +32,13 @@ public class RetailerConfiguration {
     }
 
     private Retailer mapToRetailer(Map<String, Object> retailerData) {
-        String id = (String) retailerData.get("id");
-        String name = (String) retailerData.get("name");
-        String baseUrl = (String) retailerData.get("baseUrl");
-        String scraperClass = (String) retailerData.get("scraperClass");
-        Boolean enabled = (Boolean) retailerData.get("enabled");
-        String schedule = (String) retailerData.get("schedule");
-        List<Map<String, String>> productsData = (List<Map<String, String>>) retailerData.get("products");
+        var id = (String) retailerData.get("id");
+        var name = (String) retailerData.get("name");
+        var baseUrl = (String) retailerData.get("baseUrl");
+        var scraperClass = (String) retailerData.get("scraperClass");
+        var enabled = (Boolean) retailerData.get("enabled");
+        var schedule = (String) retailerData.get("schedule");
+        var productsData = (List<Map<String, String>>) retailerData.get("products");
         List<Product> products = null;
         if (productsData != null) {
             products = productsData.stream()
@@ -49,6 +49,6 @@ public class RetailerConfiguration {
         // and will be set elsewhere or are optional.
         // For now, setting them to null or Instant.EPOCH
         return new Retailer(id, name, baseUrl, scraperClass, enabled != null ? enabled : false, schedule, products,
-                Instant.EPOCH, Instant.EPOCH);
+                null, null);
     }
 }
