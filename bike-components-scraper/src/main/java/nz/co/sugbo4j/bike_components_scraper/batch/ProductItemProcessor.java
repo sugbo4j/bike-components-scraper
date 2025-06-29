@@ -3,6 +3,8 @@ package nz.co.sugbo4j.bike_components_scraper.batch;
 import nz.co.sugbo4j.bike_components_scraper.model.AFullBikeSet;
 import nz.co.sugbo4j.bike_components_scraper.model.manufacturer.BikeBrand;
 import nz.co.sugbo4j.bike_components_scraper.model.scrapeData.Retailer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.stereotype.Component;
 
@@ -12,12 +14,14 @@ import java.util.UUID;
 public class ProductItemProcessor
         implements ItemProcessor<Retailer.Product, AFullBikeSet> {
 
+    private static final Logger logger = LoggerFactory.getLogger(ProductItemProcessor.class);
+
     @Override
     public AFullBikeSet process(Retailer.Product item) throws Exception {
         // TODO: Implement actual processing logic to transform raw scraped data into
         // AFullBikeSet
         // For now, create a dummy AFullBikeSet
-        System.out.println("Processing product: " + item.category() + " - " + item.url());
+        logger.info("Processing product: {} - {}", item.category(), item.url());
 
         // Generate a random UUID for the ID
         String id = UUID.randomUUID().toString();

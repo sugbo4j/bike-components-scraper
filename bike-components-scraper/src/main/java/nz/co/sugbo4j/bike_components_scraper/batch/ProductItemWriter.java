@@ -2,6 +2,8 @@ package nz.co.sugbo4j.bike_components_scraper.batch;
 
 import nz.co.sugbo4j.bike_components_scraper.model.AFullBikeSet;
 import nz.co.sugbo4j.bike_components_scraper.repository.AFullBikeSetRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.Chunk;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,8 @@ import java.util.Optional;
 
 @Component
 public class ProductItemWriter implements ItemWriter<AFullBikeSet> {
+
+    private static final Logger logger = LoggerFactory.getLogger(ProductItemWriter.class);
 
     private final AFullBikeSetRepository aFullBikeSetRepository;
 
@@ -56,11 +60,11 @@ public class ProductItemWriter implements ItemWriter<AFullBikeSet> {
                         bikeSet.rotors(),
                         bikeSet.pedals());
                 aFullBikeSetRepository.save(updatedBikeSet);
-                System.out.println("Updated AFullBikeSet: " + updatedBikeSet.model());
+                logger.info("Updated AFullBikeSet: {}", updatedBikeSet.model());
             } else {
                 // Save new document
                 aFullBikeSetRepository.save(bikeSet);
-                System.out.println("Saved new AFullBikeSet: " + bikeSet.model());
+                logger.info("Saved new AFullBikeSet: {}", bikeSet.model());
             }
         }
     }

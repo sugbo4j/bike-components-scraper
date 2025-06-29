@@ -1,6 +1,8 @@
 package nz.co.sugbo4j.bike_components_scraper.batch;
 
 import nz.co.sugbo4j.bike_components_scraper.model.scrapeData.Retailer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobParameters;
 import org.springframework.batch.core.JobParametersBuilder;
@@ -24,6 +26,8 @@ import java.util.Map;
 @Configuration
 @EnableScheduling
 public class ScrapingJobScheduler implements SchedulingConfigurer {
+
+    private static final Logger logger = LoggerFactory.getLogger(ScrapingJobScheduler.class);
 
     private final JobLauncher jobLauncher;
     private final ApplicationContext applicationContext;
@@ -49,8 +53,8 @@ public class ScrapingJobScheduler implements SchedulingConfigurer {
                     taskRegistrar.addTriggerTask(
                             () -> launchJob(retailer.retailerId()),
                             new CronTrigger(retailer.schedule()));
-                    System.out.println("Scheduled job for retailer: " + retailer.retailerName() + " with schedule: "
-                            + retailer.schedule());
+                    logger.info("Scheduled job for retailer: {} with schedule: {}",
+                            retailer.retailerName(), retailer.schedule());
                 });
     }
 
@@ -63,11 +67,11 @@ public class ScrapingJobScheduler implements SchedulingConfigurer {
 
         try {
             jobLauncher.run(scrapingJob, jobParameters);
-            System.out.println("Launched job for retailer: " + retailerId);
+            logger.info("Launched job for retailer: {}", retailerId);
         } catch (JobExecutionAlreadyRunningException | JobRestartException | JobInstanceAlreadyCompleteException
                 | org.springframework.batch.core.UnexpectedJobExecutionException
                 | org.springframework.batch.core.JobParametersInvalidException e) {
-            System.err.println("Error launching job for retailer " + retailerId + ": " + e.getMessage());
+            logger.error("Error launching job for retailer {}: {}", retailerId, e.getMessage());
         }
     }
 }

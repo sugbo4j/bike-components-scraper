@@ -4,6 +4,8 @@ import nz.co.sugbo4j.bike_components_scraper.model.scrapeData.Retailer;
 import nz.co.sugbo4j.bike_components_scraper.scraper.BaseScraper;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemReader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -16,6 +18,8 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 
 @Component
 public class RetailerItemReader implements ItemReader<Retailer.Product> {
+
+    private static final Logger logger = LoggerFactory.getLogger(RetailerItemReader.class);
 
     private final ApplicationContext applicationContext;
     private final List<Retailer> retailers;
@@ -41,7 +45,7 @@ public class RetailerItemReader implements ItemReader<Retailer.Product> {
                         currentBaseUrl = retailer.retailerUrl();
                         retailer.products().forEach(productQueue::add);
                     } catch (ClassNotFoundException e) {
-                        System.err.println("Scraper class not found: " + retailer.scraperClass());
+                        logger.error("Scraper class not found: {}", retailer.scraperClass());
                     }
                 });
     }
@@ -59,9 +63,9 @@ public class RetailerItemReader implements ItemReader<Retailer.Product> {
                 Document document = Jsoup.connect(fullUrl).get();
                 // Here, we would typically pass the document to the currentScraper
                 // For now, we'll just log and return the product to simulate reading.
-                System.out.println("Successfully fetched: " + fullUrl);
+                logger.info("Successfully fetched: {}", fullUrl);
             } catch (IOException e) {
-                System.err.println("Failed to fetch " + fullUrl + ": " + e.getMessage());
+                logger.error("Failed to fetch {}: {}", fullUrl, e.getMessage());
                 // Optionally re-add to queue for retry or handle error
             }
         }
