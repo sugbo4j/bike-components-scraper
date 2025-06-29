@@ -1,6 +1,6 @@
 package nz.co.sugbo4j.bike_components_scraper.model;
 
-import nz.co.sugbo4j.bike_components_scraper.model.manufacturer.PartsMaker;
+import nz.co.sugbo4j.bike_components_scraper.model.manufacturer.ComponentBrand;
 
-public record Cassette(PartsMaker maker, String model, String description) {
+public record Cassette(ComponentBrand maker, String model, String description) {
 }

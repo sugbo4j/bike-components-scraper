@@ -1,7 +1,7 @@
 package nz.co.sugbo4j.bike_components_scraper.model;
 
 import nz.co.sugbo4j.bike_components_scraper.model.common.BikeSide;
-import nz.co.sugbo4j.bike_components_scraper.model.manufacturer.PartsMaker;
+import nz.co.sugbo4j.bike_components_scraper.model.manufacturer.ComponentBrand;
 
-public record Derailleur(PartsMaker maker, String model, String description, BikeSide side) {
+public record Derailleur(ComponentBrand maker, String model, String description, BikeSide side) {
 }

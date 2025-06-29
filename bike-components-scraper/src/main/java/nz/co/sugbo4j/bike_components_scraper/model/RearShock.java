@@ -1,6 +1,6 @@
 package nz.co.sugbo4j.bike_components_scraper.model;
 
-import nz.co.sugbo4j.bike_components_scraper.model.manufacturer.PartsMaker;
+import nz.co.sugbo4j.bike_components_scraper.model.manufacturer.ComponentBrand;
 
-public record RearShock(PartsMaker maker, String model, String description, int travelMm) {
+public record RearShock(ComponentBrand maker, String model, String description, int travelMm) {
 }
